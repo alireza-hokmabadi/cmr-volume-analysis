@@ -38,9 +38,13 @@ def load_cine_segmentation(path: str | Path) -> CineSegmentationRecord:
 
     target = Path(path)
     image = nib.load(str(target))
-    data = np.asanyarray(image.dataobj)
-    header = image.header
-    affine = np.asarray(image.affine, dtype=float)
+    if not isinstance(image, (nib.Nifti1Image, nib.Nifti2Image)):
+        raise TypeError(f"Expected a NIfTI image, got {type(image).__name__}.")
+
+    nifti_image: Any = image
+    data = np.asanyarray(nifti_image.dataobj)
+    header: Any = nifti_image.header
+    affine = np.asarray(nifti_image.affine, dtype=float)
     zooms = tuple(float(value) for value in header.get_zooms())
     axcodes = tuple(str(value) for value in nib.aff2axcodes(affine))
     qform_code = int(header["qform_code"])
