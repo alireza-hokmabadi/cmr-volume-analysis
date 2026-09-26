@@ -1,0 +1,12 @@
+{
+  "integer_tolerance": 0.000001,
+  "min_frames": 8,
+  "min_component_voxels": 8,
+  "min_largest_component_fraction": 0.95,
+  "max_relative_phase_jump": 0.35,
+  "timing_disagreement_fraction": 0.10,
+  "smoothing_window": 5,
+  "smoothing_polyorder": 2,
+  "use_smoothing_for_landmarks": true,
+  "warn_missing_qform_sform": true
+}

@@ -1,0 +1,3 @@
+case_id,segmentation_path,lv_label,rv_label,frame_time_ms,heart_rate_bpm
+subject_001,data/subject_001_seg.nii.gz,1,2,40,75
+subject_002,data/subject_002_seg.nii.gz,1,2,,70
