@@ -1,4 +1,3 @@
-import numpy as np
 import pytest
 
 from cmr_volume_analysis.analysis import analyze_cine_segmentation
